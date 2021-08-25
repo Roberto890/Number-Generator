@@ -1,24 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Number_Generator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="nhr-Sz-ctr">
+                                <rect key="frame" x="43" y="68" width="328" height="130"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGT-wu-OP3">
+                                <rect key="frame" x="177" y="511" width="60" height="113"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="94"/>
+                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="se1-e2-1PF">
+                                <rect key="frame" x="76.5" y="232" width="261" height="273"/>
+                                <state key="normal" image="botaogerar"/>
+                                <state key="highlighted" image="botaogerar-pressionado"/>
+                                <connections>
+                                    <action selector="numberGenerator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0qc-ft-hMr"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="1" green="0.45790420372128815" blue="0.28979784046906254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AGT-wu-OP3" secondAttribute="bottom" constant="238" id="6SC-mn-8q9"/>
+                            <constraint firstItem="AGT-wu-OP3" firstAttribute="centerX" secondItem="se1-e2-1PF" secondAttribute="centerX" id="OCm-V6-Ofz"/>
+                            <constraint firstItem="se1-e2-1PF" firstAttribute="centerX" secondItem="nhr-Sz-ctr" secondAttribute="centerX" id="Qeo-NX-91k"/>
+                            <constraint firstItem="se1-e2-1PF" firstAttribute="top" secondItem="nhr-Sz-ctr" secondAttribute="bottom" constant="34" id="fUy-jQ-tgQ"/>
+                            <constraint firstItem="nhr-Sz-ctr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="i41-4i-7LI"/>
+                            <constraint firstItem="nhr-Sz-ctr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="lG4-cV-mgw"/>
+                            <constraint firstItem="AGT-wu-OP3" firstAttribute="top" secondItem="se1-e2-1PF" secondAttribute="bottom" constant="6" id="qdI-QH-Aqq"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="number" destination="AGT-wu-OP3" id="3bu-Pa-PBW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="114.50892857142857"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="botaogerar" width="261" height="261"/>
+        <image name="botaogerar-pressionado" width="261" height="261"/>
+        <image name="logo" width="328" height="130"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
